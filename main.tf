@@ -7,9 +7,10 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "rayeez-terraform-bucket-00001"
-    key    = "workspace.statefile"
-    region = "us-east-1"
+    bucket         = "rayeez-terraform-bucket-00001"
+    key            = "workspace.statefile"
+    region         = "us-east-1"
+    dynamodb_table = "dynamodb-state-locking"
   }
 }
 
